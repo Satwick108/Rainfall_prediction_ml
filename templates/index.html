@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall Prediction</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script>
+    (function () {
+        const savedMode = localStorage.getItem("theme");
+        if (savedMode === "dark") {
+            document.documentElement.classList.add("dark-mode");
+            document.body.classList.add("dark-mode");
+        }
+    })();
+</script>
+
+
+
+</head>
+<body>
+
+    <div class="toggle-container">
+    <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+    </label>
+    <span class="icon" id="theme-icon">☀️</span> <!-- Sun by default -->
+</div>
+
+
+    <form id="prediction-form" action="/predict" method="post">
+        <h2>Rainfall Prediction</h2>
+
+
+
+        <label for="pressure">Pressure:</label>
+        <input type="number" step="any" id="pressure" name="pressure" required><br>
+
+        <label for="dewpoint">Dewpoint:</label>
+        <input type="number" step="any" id="dewpoint" name="dewpoint" required><br>
+
+        <label for="humidity">Humidity:</label>
+        <input type="number" step="any" id="humidity" name="humidity" required><br>
+
+        <label for="cloud">Cloud:</label>
+        <input type="number" step="any" id="cloud" name="cloud" required><br>
+
+        <label for="sunshine">Sunshine:</label>
+        <input type="number" step="any" id="sunshine" name="sunshine" required><br>
+
+        <label for="winddirection">Wind Direction:</label>
+        <input type="number" step="any" id="winddirection" name="winddirection" required><br>
+
+        <label for="windspeed">Wind Speed:</label>
+        <input type="number" step="any" id="windspeed" name="windspeed" required><br>
+
+        <button type="button" id="autofill">Autofill with Current Location</button>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <script src="static/script.js">
+    </script>
+</body>
+</html>
