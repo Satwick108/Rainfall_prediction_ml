@@ -40,18 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("darkMode") === "enabled") {
         body.classList.add("dark-mode");
         toggleSwitch.checked = true;
-        themeIcon.textContent = "🌙"; // Moon icon
+        themeIcon.textContent = "🌙"; 
     }
 
     // Toggle Dark Mode
     toggleSwitch.addEventListener("change", function () {
         if (this.checked) {
             body.classList.add("dark-mode");
-            themeIcon.textContent = "🌙"; // Switch to Moon
+            themeIcon.textContent = "🌙"; 
             localStorage.setItem("darkMode", "enabled");
         } else {
             body.classList.remove("dark-mode");
-            themeIcon.textContent = "☀️"; // Switch to Sun
+            themeIcon.textContent = "☀️"; 
             localStorage.setItem("darkMode", "disabled");
         }
     });
